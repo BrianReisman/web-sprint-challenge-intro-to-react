@@ -11,7 +11,7 @@ const App = () => {
   //// Remember, anytime you have a side effect in a component, you want to think about which state and/or props it should sync up with, if any.
 
   //states
-  const [characters, setCharacters] = useState('');
+  const [characters, setCharacters] = useState([]); //TODO I was initializing as '' which worked when checking the object coming in, but not for when processing each array item?
 console.log(characters);
 
   //api > import data
@@ -30,9 +30,32 @@ console.log(characters);
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <Character data={characters}/>
+      <div>
+        {console.log(characters)}
+        {characters.map((character) => {
+          return <Character key={character.name} data={character} />;
+        })}
+        ;
+      </div>
     </div>
   );
+
+
 }
 
 export default App;
+
+
+// {console.log(characters)}
+// {characters.map(character => {
+//     return <Character data={character}/>
+//   })
+// };
+
+
+// return (
+//   <div className="App">
+//     <h1 className="Header">Characters</h1>
+//     <Character data={characters}/>
+//   </div>
+// );
