@@ -3,6 +3,16 @@ import React, { useState , useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Character from './components/Character'
+import styled from 'styled-components'
+
+
+
+const MyDiv = styled.div`
+/* background-color: ${props => props.theme.backgroundColor}; */
+h1{
+  color: ${props => props.theme.primaryColor};
+}
+`
 
 const App = () => {
   //// Try to think through what state you'll need for this app before starting. Then build out
@@ -12,7 +22,7 @@ const App = () => {
 
   //states
   const [characters, setCharacters] = useState([]); //TODO I was initializing as '' which worked when checking the object coming in, but not for when processing each array item?
-console.log(characters);
+// console.log(characters);
 
   //api > import data
   useEffect(() => {
@@ -27,17 +37,20 @@ console.log(characters);
   }, [])
 
 
+
+
+
   return (
-    <div className="App">
+    <MyDiv className="App">
       <h1 className="Header">Characters</h1>
       <div>
-        {console.log(characters)}
+        {/* {console.log(characters)} */}
         {characters.map((character) => {
           return <Character key={character.name} data={character} />;
         })}
         ;
       </div>
-    </div>
+    </MyDiv>
   );
 
 
