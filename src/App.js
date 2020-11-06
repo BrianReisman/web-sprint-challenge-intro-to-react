@@ -6,7 +6,6 @@ import Character from './components/Character'
 import styled from 'styled-components'
 
 
-
 const MyDiv = styled.div`
 /* background-color: ${props => props.theme.backgroundColor}; */
 h1{
@@ -47,28 +46,10 @@ const App = () => {
         {/* {console.log(characters)} */}
         {characters.map((character) => {
           return <Character key={character.name} data={character} />;
-        })}
-        ;
+        })};
       </div>
     </MyDiv>
   );
-
-
 }
 
 export default App;
-
-
-// {console.log(characters)}
-// {characters.map(character => {
-//     return <Character data={character}/>
-//   })
-// };
-
-
-// return (
-//   <div className="App">
-//     <h1 className="Header">Characters</h1>
-//     <Character data={characters}/>
-//   </div>
-// );
