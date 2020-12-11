@@ -29,13 +29,17 @@ const App = () => {
     align-self: auto;
     align-items: center;
     *{
-      border: 1px solid blue;
+      /* border: 1px solid blue; */
+      background-blend-mode: lighten;
     }
     p{
       line-height: -1px;
       letter-spacing: -1px;
       margin: 8px;
-      border: 1px solid red;
+      /* border: 1px solid red; */
+      color: navy;
+      font-weight: bold;
+      background: rgba(185, 214, 242, 0.45);
     }
   `
 
